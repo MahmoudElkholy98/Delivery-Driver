@@ -214,8 +214,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6263489248032298730, guid: ed51069d8b66e1a4d89f489d252b24e7, type: 3}
+      propertyPath: steerSpeed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263489248032298730, guid: ed51069d8b66e1a4d89f489d252b24e7, type: 3}
       propertyPath: movmentSpeed
-      value: 0.1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6263489248032298730, guid: ed51069d8b66e1a4d89f489d252b24e7, type: 3}
       propertyPath: rotationSpeed

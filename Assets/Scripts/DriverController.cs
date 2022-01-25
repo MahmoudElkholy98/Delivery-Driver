@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DriverController : MonoBehaviour
 {
-    [Range(0,3)]
-    [SerializeField] private float rotationSpeed = 0.2f;
+    [Range(0, 500)]
+    [SerializeField] private float steerSpeed = 0.2f;
 
 
-    [Range(0, 3)]
+    [Range(0, 50)]
     [SerializeField] private float movmentSpeed = 2f;
 
     void Start(){
@@ -18,10 +18,10 @@ public class DriverController : MonoBehaviour
     void Update() {
 
         if (Input.GetKey(KeyCode.D)) {
-            RotateDriver(-rotationSpeed);
+            SteerCar(-steerSpeed);
         }
         if (Input.GetKey(KeyCode.A)) {
-            RotateDriver(rotationSpeed);
+            SteerCar(steerSpeed);
         }
 
         if (Input.GetKey(KeyCode.W)) {
@@ -33,11 +33,13 @@ public class DriverController : MonoBehaviour
         }
     }
 
-    private void RotateDriver(float _rotationSpeed) {
-        this.transform.Rotate(0, 0, _rotationSpeed);
+    private void SteerCar(float _rotationSpeed) {
+        float steerAmount = _rotationSpeed * Time.deltaTime;
+        this.transform.Rotate(0, 0, steerAmount);
     }
 
     private void DriverMovement(float _movementSpeed) {
-        this.transform.Translate(0, _movementSpeed, 0);
+        float rotationAmount = _movementSpeed * Time.deltaTime;
+        this.transform.Translate(0, rotationAmount, 0);
     }
 }
